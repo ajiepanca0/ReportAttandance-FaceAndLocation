@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logoo"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_judul_halaman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Halaman Masuk"
+        app:layout_constraintTop_toBottomOf="@+id/login_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/tv_nip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Nip:"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_judul_halaman" />
+
+    <EditText
+        android:id="@+id/et_nip"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nip"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bgform"
+        android:hint="masukan nip..."
+        android:paddingStart="10dp"
+        tools:ignore="RtlSymmetry"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="23dp"
+        android:inputType="text"/>
+
+
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Password:"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_nip" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_password"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bgform"
+        android:hint="masukan password..."
+        android:paddingStart="10dp"
+        tools:ignore="RtlSymmetry"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="23dp"
+        android:inputType="textPassword"/>
+
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_btn"
+        android:text="masuk"
+        android:textColor="#FFFFFF"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

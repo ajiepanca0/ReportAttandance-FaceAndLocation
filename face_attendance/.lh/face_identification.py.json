@@ -1,0 +1,18 @@
+{
+    "sourceFile": "face_identification.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1686837608462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1686837608462,
+            "name": "Commit-0",
+            "content": "import pickle\r\nimport face_recognition\r\nimport cv2\r\nimport threading\r\n\r\n# Muat model KNN yang telah dilatih\r\nwith open(\"model/trained_knn_model.clf\", 'rb') as f:\r\n    knn_clf = pickle.load(f)\r\n\r\n# Inisialisasi objek penangkapan video\r\nvideo_capture = cv2.VideoCapture(0)\r\n\r\n# Fungsi untuk memulai penangkapan video\r\ndef start_video_stream():\r\n    while True:\r\n        # Baca video frame per frame\r\n        ret, frame = video_capture.read()\r\n\r\n        # Ubah frame dari BGR ke RGB\r\n        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\r\n\r\n        # Temukan lokasi wajah dalam frame\r\n        X_face_locations = face_recognition.face_locations(rgb_frame)\r\n\r\n        if len(X_face_locations) != 0:\r\n            # Temukan enkoding wajah dalam frame\r\n            faces_encodings = face_recognition.face_encodings(rgb_frame, known_face_locations=X_face_locations, model=\"large\")\r\n\r\n            # Gunakan model KNN untuk mencari kemiripan terbaik untuk wajah uji\r\n            closest_distances = knn_clf.kneighbors(faces_encodings, n_neighbors=9)\r\n            are_matches = [closest_distances[0][i][0] <= 0.4 for i in range(len(X_face_locations))]\r\n            predictions = [(pred, loc) if rec else (\"unknown\", loc) for pred, loc, rec in\r\n                           zip(knn_clf.predict(faces_encodings), X_face_locations, are_matches)]\r\n\r\n            for name, (top, right, bottom, left) in predictions:\r\n                # Gambar persegi panjang di sekitar wajah\r\n                cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)\r\n\r\n                # Gambar label dengan nama di bawah wajah\r\n                cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)\r\n                font = cv2.FONT_HERSHEY_DUPLEX\r\n                cv2.putText(frame, name, (left + 6, bottom - 6), font, 0.7, (255, 255, 255), 1)\r\n\r\n                # Hitung akurasi\r\n                num_matches = sum(are_matches)\r\n                total_faces = len(X_face_locations)\r\n                accuracy = num_matches / total_faces\r\n\r\n                # Tambahkan informasi akurasi dalam bentuk frame\r\n                accuracy_text = f\"Akurasi: {accuracy:.2f}\"\r\n                cv2.putText(frame, accuracy_text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)\r\n\r\n        # Tampilkan frame yang dihasilkan\r\n        cv2.imshow('Video', frame)\r\n\r\n        # Hentikan loop ketika tombol 'q' ditekan\r\n        if cv2.waitKey(1) & 0xFF == ord('q'):\r\n            break\r\n\r\n# Mulai penangkapan video dalam thread terpisah\r\nvideo_thread = threading.Thread(target=start_video_stream)\r\nvideo_thread.start()\r\n\r\n# Tunggu thread penangkapan video selesai\r\nvideo_thread.join()\r\n\r\n# Setelah thread penangkapan video selesai, lepaskan sumber daya\r\nvideo_capture.release()\r\ncv2.destroyAllWindows()"
+        }
+    ]
+}

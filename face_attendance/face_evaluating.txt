@@ -1,0 +1,84 @@
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import face_recognition
+import os
+import pickle
+import pandas as pd
+from sklearn.metrics import confusion_matrix, classification_report
+
+def plot_confusion_matrix(conf_matrix, classes):
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues", cbar=False)
+    plt.xticks(np.arange(len(classes)), classes, rotation=45)
+    plt.yticks(np.arange(len(classes)), classes, rotation=0)
+    plt.xlabel("Predicted")
+    plt.ylabel("True")
+    plt.title("Confusion Matrix")
+    plt.show()
+
+def plot_accuracy_report(report):
+    report_data = []
+    lines = report.split('\n')
+    for line in lines[2:-5]:
+        row = line.split()
+        report_data.append(row)
+    labels = ['precision', 'recall', 'f1-score', 'support']
+    target_names = [row[0] for row in report_data]
+    values = [float(row[1]) for row in report_data]
+    values[-1] *= 100  # Convert support to percentage
+    plt.figure(figsize=(8, 4))
+    sns.barplot(x=values, y=target_names, palette="Blues")
+    plt.xlim(0, 100)
+    plt.xlabel('Score')
+    plt.ylabel('Target')
+    plt.title('Accuracy Report')
+    plt.show()
+
+def calculate_error_rate(conf_matrix):
+    total_samples = np.sum(conf_matrix)
+    correct_predictions = np.trace(conf_matrix)
+    error_rate = 1 - (correct_predictions / total_samples)
+    return error_rate
+
+# Load the trained KNN model
+model_path = "model/trained_knn_model.clf"
+with open(model_path, 'rb') as f:
+    knn_clf = pickle.load(f)
+
+# Load the test data
+test_dir = "dataset/test"
+test_names = os.listdir(test_dir)
+
+encodings_test = []
+names_test = []
+
+for name in test_names:
+    person_dir = os.path.join(test_dir, name)
+    image_files = os.listdir(person_dir)
+    for image_file in image_files:
+        image_path = os.path.join(person_dir, image_file)
+        face = face_recognition.load_image_file(image_path)
+        face_enc = face_recognition.face_encodings(face)
+        if len(face_enc) > 0:
+            face_enc = np.array(face_enc[0])
+            face_enc = face_enc.flatten()
+            encodings_test.append(face_enc)
+            names_test.append(name)
+
+# Perform prediction using the KNN model
+encodings_test = np.array(encodings_test).reshape(-1, 1)  # Reshape to 2D array
+print("Number of test samples:", len(encodings_test))  # Print number of test samples
+predictions = knn_clf.predict(encodings_test)
+
+# Generate confusion matrix
+conf_matrix = confusion_matrix(names_test, predictions)
+plot_confusion_matrix(conf_matrix, np.unique(names_test))
+
+# Generate accuracy report
+classification_rep = classification_report(names_test, predictions)
+plot_accuracy_report(classification_rep)
+
+# Calculate and display error rate
+error_rate = calculate_error_rate(conf_matrix)
+print("Error Rate:", error_rate)

@@ -1,0 +1,1403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <TextView
+            android:id="@+id/judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Berita Acara Instalasi ATM"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_bold"/>
+
+
+        <TextView
+            android:id="@+id/tv_nama_karyawan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Nama Karyawan:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/judul" />
+
+        <EditText
+            android:id="@+id/et_nama_karyawan"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama_karyawan"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan nama karyawan..."
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_lokasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:text="Lokasi :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_nama_karyawan" />
+
+        <EditText
+            android:id="@+id/et_lokasi"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lokasi"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan lokasi ..."
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+
+        <TextView
+            android:id="@+id/tv_wsid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:text="WSID :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_lokasi" />
+
+        <EditText
+            android:id="@+id/et_wsid"
+            android:layout_width="144dp"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_wsid"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan wsid ..."
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="number"/>
+
+
+        <TextView
+            android:id="@+id/tv_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:text="Alamat :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_wsid" />
+
+        <EditText
+            android:id="@+id/et_alamat"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_alamat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan alamat ..."
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_type_mesin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_alamat"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Type Mesin :"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            />
+
+        <EditText
+            android:id="@+id/et_type_mesin"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_type_mesin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="Masukan type mesin"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="number"/>
+
+
+        <TextView
+            android:id="@+id/tv_serial_nomor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_type_mesin"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Serial Nomor :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_serial_nomor"
+            android:layout_width="150dp"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_serial_nomor"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan serial nomor"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="number"/>
+
+
+        <TextView
+            android:id="@+id/tv_baru_relokasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_serial_nomor"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Baru / Relokasi :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_baru_relokasi"
+            android:layout_width="150dp"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_baru_relokasi"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="baru / relokasi"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+
+        <TextView
+            android:id="@+id/tv_tegangan_listrik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_baru_relokasi"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Tegangan Listrik (UPS-IT)"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_tegangan_listrik"
+            android:layout_width="150dp"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tegangan_listrik"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="tegangan"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="number"/>
+
+
+        <TextView
+            android:id="@+id/tv_grounding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_tegangan_listrik"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Grounding (UPS-IT)"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_grounding"
+            android:layout_width="150dp"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_grounding"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="grounding"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/tv_initial_vsat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_grounding"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Initial VSAT"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_initial_vsat"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_initial_vsat"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan initial vsat"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_konfigurasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_initial_vsat"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Konfigurasi"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_konfigurasi"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_konfigurasi"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan konfigurasi"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_ipaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_konfigurasi"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Ip Address"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_ipaddress"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ipaddress"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan ip address"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/tv_catridge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_ipaddress"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Catridge"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_catridge"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_catridge"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan data catridge"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_catridge"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Reject"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_reject"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reject"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan data reject"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_kunci"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_reject"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Kunci"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_kunci"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kunci"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan data kunci"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_kamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_kunci"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Kamera"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_kamera"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kamera"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan data kamera"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_perekam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_kamera"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Perekam"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_perekam"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_perekam"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan data perekam"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_pin_cover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_perekam"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Pin Cover"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_pin_cover"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pin_cover"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan info pin cover"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+
+        <TextView
+            android:id="@+id/tv_fdi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_pin_cover"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="FDI"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_fdi"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fdi"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan info fdi"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_master_key_td"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_fdi"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Master Key Triple Desk"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_master_key_fd"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_master_key_td"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan master key FD"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_master_key_fd_info_ifno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_master_key_fd"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Harap Info Alasan Jika Tidak :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_master_key_fd_info_ifno"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_master_key_fd_info_ifno"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan keterangan "
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_ac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_master_key_fd_info_ifno"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="AC :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_ac"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ac"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan keterangan AC "
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_outdoor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_ac"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="OUTDOOR "
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <TextView
+            android:id="@+id/tv_neonsign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_outdoor"
+            app:layout_constraintBottom_toBottomOf="@+id/et_neon_sign"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Neon Sign :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_neon_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan info neon sign "
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_outdoor"
+            app:layout_constraintStart_toEndOf="@+id/tv_neonsign"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_indoor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_neon_sign"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="INDOOR"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <TextView
+            android:id="@+id/tv_stiker_mesin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_indoor"
+            app:layout_constraintBottom_toBottomOf="@+id/et_stiker_mesin"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Stiker Mesin :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_stiker_mesin"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan info stiker mesin"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_indoor"
+            app:layout_constraintStart_toEndOf="@+id/tv_stiker_mesin"
+            tools:ignore="RtlSymmetry" />
+
+
+
+        <TextView
+            android:id="@+id/tv_kabel_jalur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_kabel_jalur"
+            app:layout_constraintBottom_toBottomOf="@+id/et_kabel_jalur"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Kabel Jalur :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_kabel_jalur"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan info kabel jalur"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_stiker_mesin"
+            app:layout_constraintStart_toEndOf="@+id/tv_kabel_jalur"
+            tools:ignore="RtlSymmetry" />
+
+
+
+        <TextView
+            android:id="@+id/tv_colokan_listrik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_colokan_listrik"
+            app:layout_constraintBottom_toBottomOf="@+id/et_colokan_listrik"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Colokan Listrik :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_colokan_listrik"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan info colokan listrik"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_kabel_jalur"
+            app:layout_constraintStart_toEndOf="@+id/tv_colokan_listrik"
+            tools:ignore="RtlSymmetry" />
+
+
+        <TextView
+            android:id="@+id/tv_perekam_eksternal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_perekam_eksternal"
+            app:layout_constraintBottom_toBottomOf="@+id/et_perekam_eksternal"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Perekam Eksternal :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_perekam_eksternal"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan info perekam eks"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_colokan_listrik"
+            app:layout_constraintStart_toEndOf="@+id/tv_perekam_eksternal"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_merk_pe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_merk_pe"
+            app:layout_constraintBottom_toBottomOf="@+id/et_merk_pe"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Merk :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_merk_pe"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan merk"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_perekam_eksternal"
+            app:layout_constraintStart_toEndOf="@+id/tv_merk_pe"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_sn_pe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_sn_pe"
+            app:layout_constraintBottom_toBottomOf="@+id/et_sn_pe"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="SN :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_sn_pe"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan SN"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_merk_pe"
+            app:layout_constraintStart_toEndOf="@+id/tv_merk_pe"
+            tools:ignore="RtlSymmetry" />
+
+
+
+        <TextView
+            android:id="@+id/tv_kamera_eksternal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_kamera_eksternal"
+            app:layout_constraintBottom_toBottomOf="@+id/et_kamera_eksternal"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Kamera Eksternal :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_kamera_eksternal"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan info kamera eks"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_sn_pe"
+            app:layout_constraintStart_toEndOf="@+id/tv_kamera_eksternal"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_merk_ke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_merk_ke"
+            app:layout_constraintBottom_toBottomOf="@+id/et_merk_ke"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Merk :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_merk_ke"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan merk"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_kamera_eksternal"
+            app:layout_constraintStart_toEndOf="@+id/tv_merk_ke"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_sn_ke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_sn_ke"
+            app:layout_constraintBottom_toBottomOf="@+id/et_sn_ke"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="SN :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_sn_ke"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan SN"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_merk_ke"
+            app:layout_constraintStart_toEndOf="@+id/tv_merk_ke"
+            tools:ignore="RtlSymmetry" />
+
+
+
+        <TextView
+            android:id="@+id/tv_ups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_ups"
+            app:layout_constraintBottom_toBottomOf="@+id/et_ups"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Ups :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_ups"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan info UPS"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_sn_ke"
+            app:layout_constraintStart_toEndOf="@+id/tv_ups"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_merk_ups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_merk_ups"
+            app:layout_constraintBottom_toBottomOf="@+id/et_merk_ups"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Merk :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_merk_ups"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan merk"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_ups"
+            app:layout_constraintStart_toEndOf="@+id/tv_merk_ups"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_sn_ups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_sn_ups"
+            app:layout_constraintBottom_toBottomOf="@+id/et_sn_ups"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="SN :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_sn_ups"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan SN"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_merk_ups"
+            app:layout_constraintStart_toEndOf="@+id/tv_merk_ups"
+            tools:ignore="RtlSymmetry" />
+
+
+        <TextView
+            android:id="@+id/tv_monitor_led"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_monitor_led"
+            app:layout_constraintBottom_toBottomOf="@+id/et_monitor_led"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Monitor LED :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_monitor_led"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan info Monitor LED"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_sn_ups"
+            app:layout_constraintStart_toEndOf="@+id/tv_monitor_led"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_merk_ml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_merk_ml"
+            app:layout_constraintBottom_toBottomOf="@+id/et_merk_ml"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Merk :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_merk_ml"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan merk"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_monitor_led"
+            app:layout_constraintStart_toEndOf="@+id/tv_merk_ml"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_sn_ml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_sn_ml"
+            app:layout_constraintBottom_toBottomOf="@+id/et_sn_ml"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="SN :"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <EditText
+            android:id="@+id/et_sn_ml"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bgform"
+            android:hint="masukan SN"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_merk_ml"
+            app:layout_constraintStart_toEndOf="@+id/tv_merk_ml"
+            tools:ignore="RtlSymmetry" />
+
+
+        <TextView
+            android:id="@+id/tv_letak_mesin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Letak Mesin:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_sn_ml" />
+
+        <EditText
+            android:id="@+id/et_letak_mesin"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_letak_mesin"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan letak mesin..."
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+
+        <TextView
+            android:id="@+id/tv_pasang_pa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Pasang Pengaman Angkur:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_letak_mesin" />
+
+        <EditText
+            android:id="@+id/et_pasang_pa"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pasang_pa"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="Ya/Tidak  (jika “YA” tuliskan nama vendor)	:PT.PAS "
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_type_pengaman_pengganti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Jika “Tidak” harap info type pengaman pengganti:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_pasang_pa" />
+
+        <EditText
+            android:id="@+id/et_type_pengaman_pengganti"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_type_pengaman_pengganti"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="Dynabold / Alarm"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_info_alasan_tidak_pa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Harap info alasan menggunakan Dynabold/Alarm :"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_type_pengaman_pengganti" />
+
+        <EditText
+            android:id="@+id/et_info_alasan_tidak_pa"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_info_alasan_tidak_pa"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan alasan"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+
+
+        <TextView
+            android:id="@+id/tv_pasang_supersite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Pasang Supersite:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_info_alasan_tidak_pa" />
+
+        <EditText
+            android:id="@+id/et_pasang_supersite"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pasang_supersite"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="Ya/Tidak  (jika “YA” tuliskan nama vendor)	:PT.PAS "
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_exhaustfan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Exhaust Fan :"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_pasang_supersite" />
+
+        <EditText
+            android:id="@+id/et_exhaustfan"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_exhaustfan"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="Nyala / Mati"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tv_info_alasan_tidak_supersite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Jika Tidak pasang supersite mohon alasannya :"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_exhaustfan" />
+
+        <EditText
+            android:id="@+id/et_info_alasan_tidak_supersite"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_info_alasan_tidak_supersite"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan alasan"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+
+        <TextView
+            android:id="@+id/tv_tgl_email_permintaan_mesin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Tanggal Email Permintaan Mesin :"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_info_alasan_tidak_supersite" />
+
+        <EditText
+            android:id="@+id/et_tgl_email_permintaan_mesin"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tgl_email_permintaan_mesin"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan tanggal permintaan"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="date"/>
+
+        <TextView
+            android:id="@+id/tv_koordinat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Koordinat :"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_tgl_email_permintaan_mesin" />
+
+        <EditText
+            android:id="@+id/et_koordinat"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_koordinat"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bgform"
+            android:hint="masukan koordinat"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="23dp"
+            android:inputType="text"/>
+
+
+
+                <Button
+            android:id="@+id/btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_koordinat"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginEnd="68dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/bg_btn"
+            android:text="Simpan"
+            android:textColor="#FFFFFF"
+                    android:onClick="generatePDF"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
